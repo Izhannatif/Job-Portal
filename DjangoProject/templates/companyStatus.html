@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger  ">
+    <a class="navbar-brand p-2 font-weight-bold " href="#">JOB PORTAL</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mr-auto ml-auto " id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="">Home </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'companyLogin' %}">Company</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'login' %}">Employee</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'adminLogin' %}">Admin</a>
+        </li>
+      </ul>
+    </div>
+  </nav>    
+  <h2 class="text-center p-3 mb-2 font-weight-bold">Company Info</h2>
+<p class="h4 text-center ">Name : <span class="h4    ">{{company.companyName}}</span></p>
+<p class="h4 text-center ">Status : <span class="h4    ">{{company.status}}</span></p>
+
+<p class="text-center">Contact admin for more information : <a href="">admin@admin.com</a></p>
+<center><a href="{% url 'mainPage' %}">
+<button class="btn btn-md bg-danger text-light" >Back at Homepage</button></a></center>
+{% endblock %}

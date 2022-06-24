@@ -1,0 +1,31 @@
+{% extends 'companyNav.html' %}
+
+{% block content %}
+
+<div class="container ">
+    <div class="row ">
+        <div class="col h5">
+            <h4 class="display-4">Personal Details</h4>
+            <p><span class="font-weight-bold"> Name : </span> {{application.employee.fname}} {{application.employee.lname}}</p>
+            <p><span class="font-weight-bold"> Email : </span> {{application.employee.email}} </p>
+            <p><span class="font-weight-bold"> Age : </span> {{application.employee.age}}</p>
+            <p><span class="font-weight-bold"> Gender : </span> {{application.employee.gender}}</p>
+            <p><span class="font-weight-bold"> Address : </span> {{application.employee.address}}</p>
+            <p><span class="font-weight-bold"> Contact No : </span> {{application.employee.phoneNo}}</p>
+
+        </div>
+        <div class="col h5">
+            <h4 class="display-4">Professional Details</h4>
+            <p><span class="font-weight-bold"> Degree : </span> {{application.employee.Degree}}</p>
+            <p><span class="font-weight-bold"> Majors : </span> {{application.employee.Majors}} </p>
+            <p><span class="font-weight-bold"> Year of Graduation : </span> {{application.employee.yearOfGraduation}}</p>
+            <p><span class="font-weight-bold"> Skills : </span> {{application.employee.skills}}</p>
+            <p><span class="font-weight-bold"> Apply date: </span> {{application.apply_date}}</p>
+            <p><span class="font-weight-bold"> Resume : </span> <a href="{{BASIC_DIR}}/media/{{application.resume}}" class="text-light" target="_blank"><button class="btn btn-dark btn-sm font-weight-bold"> Show</button></a></p>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

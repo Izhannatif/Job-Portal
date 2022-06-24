@@ -1,0 +1,64 @@
+{% extends 'companyNav.html' %}
+{% block content %}
+<center>
+    <div class="container">
+        <form class="container mt-3" method="POST" enctype="multipart/form-data" style="padding-bottom:100px ;">
+            <h2 style="color: #3afa4a;text-align: center">{{message}}</h2>
+
+            {% csrf_token %}
+            <p class=" display-4 mt-3 font-weight-normal"> EDIT JOB</p>
+            <div class="row">
+
+                <div class="form-group col-md-12 ">
+                    <label>Job Title</label>
+                    <input type="text" class="form-control" name="Jobtitle" id="title" value="{{jobData.title}}"
+                        required>
+                </div>
+            </div>
+            <br>
+            <div class="row mt-3">
+                <br>
+                <div class="form-group col-md-6">
+                    <label>Salary (per month)</label>
+                    <input type="number" class="form-control" name="Salary" id="salary" value="{{jobData.salary}}"
+                        required>
+                </div>
+            </div>
+            <br>
+            <div class="row mt-3">
+                <div class="form-group col-md-12">
+                    <label>Skills Required</label>
+                    <input type="text" class="form-control" name="Skills" id="skills" value="{{jobData.skills}}"
+                        required>
+                </div>
+            </div>
+            <br>
+            <div class="row mt-3">
+                <div class="form-group col-md-6">
+                    <label>Experience (in years)</label>
+                    <input type="text" class="form-control" name="Experience" id="experience"
+                        value="{{jobData.experience}}" required>
+                </div>
+                <br>
+                <div class="form-group col-md-6">
+                    <label>Company Location</label>
+                    <input type="text" class="form-control" name="Location" id="location" value="{{jobData.location}}"
+                        required>
+                </div>
+            </div>
+            <br>
+            <div class="row mt-3">
+                <div class="form-group col-md-12">
+                    <label>jobData Description</label>
+                    <textarea name="Description" id="description" class="form-control" cols="30" rows="4"
+                        required>{{jobData.description}}</textarea>
+                </div>
+            </div>
+            <br>
+            <input type="submit" value="Submit" class="btn mt-3"
+                style="background-color: #4f868c; color: white; font-size: larger; width: 8rem;">
+
+        </form>
+    </div>
+</center>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'companyNav.html' %}
+{% block content %}
+<div class="container mt-4">
+    <input type="text" name="search-query" id="searchText" class="form-control" onkeyup="searchJobByTitle();" placeholder="Search Job Title..."
+    style="border: 1px solid rgb(87, 86, 86); "
+    >
+
+    <table class="table table-hover" id="example">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>Job Title</th>
+                <th>Applicant</th>
+                <th>Applied On</th>
+                <th>Details</th>
+                <th>Resume</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in application %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.jobData}}</td>
+                <td>{{i.employee.fname}}</td>
+                <td>{{i.apply_date}}</td>
+                <td><button class="btn btn-dark btn-sm"><a href="/applicantDetails/{{i.id}}" class=" text-light ">Details</a></button></td>
+                <td><a href="{{BASIC_DIR}}/media/{{i.resume}}" class="btn" target="_blank">
+                        <i class="fa fa-file"></i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        function searchJobByTitle(){
+            var input,tbl,tr,td,filter,i,data;
+            input = document.getElementById("searchText");
+            filter = input.value.toUpperCase();
+            tbl = document.getElementById("example");
+            tr = tbl.getElementsByTagName("tr");
+            for(i=0;i<tr.length;i++){
+                td = tr[i].getElementsByTagName("td")[1]
+                if(td){
+                    data= td.innerText;
+                    if(data.toUpperCase().indexOf(filter)>-1){
+                        tr[i].style.display = "";
+                        
+                    }
+                    else{
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</div>
+{% endblock %}
