@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 <style>
+body{
+    background-color: whitesmoke;
+}
     img {
         height: 100%;
         width: 100%;
@@ -12,9 +15,18 @@
     text-align: center;
 
 }
+.navbar{
+    background-color: #DC3545;
+}
 
+.stat-box{
+    background-color: #DC3545;
+}
+.bg-color{
+    background-color: #DC3545;
+}
 </style>
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger  ">
+<nav class="navbar navbar-expand-lg navbar-dark bg-color">
     <a class="navbar-brand p-2 font-weight-bold " href="#">JOB PORTAL</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -50,8 +62,8 @@
         </div>
     </div>
     <br><br>
-<div class="container-fluid bg-danger rounded p-2">
-    <div class="container" id="stats">
+<div class="container-fluid rounded p-2 stat-box">
+    <div class="container stat-box" id="stats">
         <p class="h2 p-2 text-light font-weight-bold">JOB PORTAL STATS</p>
         <div class="row text-light ">
             <div class="col">
@@ -94,7 +106,7 @@
 <div class="container mt-3 ">
 
     <table class="table table-hover " id="example" >
-        <thead class="bg-danger text-light">
+        <thead class="bg-color text-light">
             <tr>
                 <th>Company Name</th>
                 <th>Job Title</th>
@@ -114,15 +126,12 @@
         </tbody>
     </table>
     </div>
-    <footer class="container-fluid text-light bg-danger pt-2 pb-1 text-center mt-1 mb-0">
+    <footer class="container-fluid text-light pt-2 pb-1 text-center mt-1 mb-0 bg-color">
         <div>
-            <p>Developed By 
+            <p>&#169; 2022 Copyright:
                 <span class="font-weight-bold">
-                - Muhammad Izhan Atif
-                - Muhammad Sarim Khan
-                - Muhammad Syed Taha Ali
-                - Hamza Rizwan
-            </span> 
+                Izhan Atif
+                
             </p>
         </div>
         </footer>
